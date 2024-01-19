@@ -1,6 +1,7 @@
 export interface Set {
   name: string
   battlefields: Battlefield[]
+  coopBattlefields: Battlefield[]
   heroes: Character[]
   villains: Character[]
   minions: Character[]

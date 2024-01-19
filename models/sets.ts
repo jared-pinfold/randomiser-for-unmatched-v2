@@ -3,6 +3,7 @@ export interface Set {
   battlefields: Battlefield[]
   heroes: Character[]
   villains: Character[]
+  minions: Character[]
 }
 
 export interface Battlefield {

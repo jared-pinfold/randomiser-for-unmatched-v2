@@ -1,6 +1,6 @@
 import { Set } from '../models/sets'
 
-export default [
+export const data = [
   {
     name: 'Battle of Legends Volume 1',
     battlefields: [
@@ -13,13 +13,15 @@ export default [
       { name: 'Alice', set: 'Battle of Legends Volume 1' },
       { name: 'Sinbad', set: 'Battle of Legends Volume 1' },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'Bruce Lee',
     battlefields: [],
     heroes: [{ name: 'Bruce Lee', set: 'Bruce Lee' }],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'Robin Hood vs. Bigfoot',
@@ -31,7 +33,8 @@ export default [
       { name: 'Robin Hood', set: 'Robin Hood vs. Bigfoot' },
       { name: 'Bigfoot', set: 'Robin Hood vs. Bigfoot' },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'InGen vs. Raptors',
@@ -40,7 +43,8 @@ export default [
       { name: 'Robert Muldoon', set: 'InGen vs. Raptors' },
       { name: 'Raptors', set: 'InGen vs. Raptors' },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'Cobble & Fog',
@@ -54,7 +58,8 @@ export default [
       { name: 'Jeckyll & Hyde', set: 'Cobble & Fog' },
       { name: 'Invisible Man', set: 'Cobble & Fog' },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'Buffy the Vampire Slayer',
@@ -68,7 +73,8 @@ export default [
       { name: 'Spike', set: 'Buffy the Vampire Slayer' },
       { name: 'Willow', set: 'Buffy the Vampire Slayer' },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'Little Red riding Hood vs. Beowulf',
@@ -82,13 +88,15 @@ export default [
       },
       { name: 'Beowulf', set: 'Little Red riding Hood vs. Beowulf' },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'Deadpool',
     battlefields: [],
     heroes: [{ name: 'Deadpool', set: 'Deadpool' }],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'Battle of Legends Volume 2',
@@ -105,7 +113,8 @@ export default [
       { name: 'Sun Wukong', set: 'Battle of Legends Volume 2' },
       { name: 'Yennenga', set: 'Battle of Legends Volume 2' },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'Redemption Row',
@@ -115,7 +124,8 @@ export default [
       { name: 'Ghost Rider', set: 'Redemption Row' },
       { name: 'Moon Knight', set: 'Redemption Row' },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: "Hell's Kitchen",
@@ -125,7 +135,8 @@ export default [
       { name: 'Bullseye', set: "Hell's Kitchen" },
       { name: 'Elektra', set: "Hell's Kitchen" },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'Sattler vs. T-Rex',
@@ -134,7 +145,8 @@ export default [
       { name: 'Dr. Ellie Sattler', set: 'Sattler vs. T-Rex' },
       { name: 'T-Rex', set: 'Sattler vs. T-Rex' },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'Houdini vs. The Genie',
@@ -145,7 +157,8 @@ export default [
       { name: 'Harry Houdini', set: 'Houdini vs. The Genie' },
       { name: 'The Genie', set: 'Houdini vs. The Genie' },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'Teen Spirit',
@@ -155,7 +168,8 @@ export default [
       { name: 'Squirrel Girl', set: 'Teen Spirit' },
       { name: 'Cloak and Dagger', set: 'Teen Spirit' },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'For King and Country',
@@ -165,7 +179,8 @@ export default [
       { name: 'Black Widow', set: 'For King and Country' },
       { name: 'Black Panther', set: 'For King and Country' },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'Brains and Brawn',
@@ -175,7 +190,8 @@ export default [
       { name: 'Spider-Man', set: 'Brains and Brawn' },
       { name: 'Doctor Strange', set: 'Brains and Brawn' },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
   {
     name: 'Tales to Amaze',
@@ -192,6 +208,14 @@ export default [
     villains: [
       { name: 'Mothman', set: 'Tales to Amaze' },
       { name: 'Alien Invaders', set: 'Tales to Amaze' },
+    ],
+    minions: [
+      { name: 'Loveland Frog', set: 'Tales to Amaze' },
+      { name: 'Ant Queen', set: 'Tales to Amaze' },
+      { name: 'Skunk Ape', set: 'Tales to Amaze' },
+      { name: 'The Blob', set: 'Tales to Amaze' },
+      { name: 'Tarantula', set: 'Tales to Amaze' },
+      { name: 'Jersey Devil', set: 'Tales to Amaze' },
     ]
   },
   {
@@ -201,6 +225,8 @@ export default [
       { name: 'Oda Nobunaga', set: "Sun's Origin" },
       { name: 'Tomoe Gozen', set: "Sun's Origin" },
     ],
-    villains: []
+    villains: [],
+    minions: []
   },
 ] as Set[]
+

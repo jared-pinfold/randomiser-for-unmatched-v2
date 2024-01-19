@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { Character, Battlefield,} from '../../models/sets.ts'
-import data from '../data.ts'
+import {data} from '../data.ts'
 import { ButtonAll } from './ButtonAll.tsx'
+import { ButtonSet } from './ButtonSet.tsx'
 
 export function Sets() {
   const [battlefields, setBattlefields] = useState([] as Battlefield[])
   const [heroes, setHeroes] = useState([] as Character[])
   const [villains, setVillains] = useState([] as Character[])
+  const [minions, setMinions] = useState([] as Character[])
 
   function handleSelectAll() {
     setBattlefields(
@@ -14,21 +16,33 @@ export function Sets() {
     )
     setHeroes(data.reduce((a, c) => [...a, ...c.heroes], [] as Character[]))
     setVillains(data.reduce((a, c) => [...a, ...c.villains], [] as Character[]))
+    setMinions(data.reduce((a, c) => [...a, ...c.minions], [] as Character[]))
   }
 
   function handleRemoveAll () {
     setBattlefields([])
     setHeroes([])
     setVillains([])
+    setMinions([])
   }
 
   function handleSelect(setName: string) {
     const selectedBattlefields = data.find(set => set.name === setName)?.battlefields as Battlefield[]
     const selectedHeroes = data.find(set => set.name === setName)?.heroes as Character[]
     const selectedVillains = data.find(set => set.name === setName)?.villains as Character[]
+    const selectedMinions = data.find(set => set.name === setName)?.minions as Character[]
+
     setBattlefields([...battlefields, ...selectedBattlefields])
     setHeroes([...heroes, ...selectedHeroes])
     setVillains([...villains, ...selectedVillains])
+    setMinions([...minions, ...selectedMinions])
+  }
+
+  function handleRemove(setName: string) {
+    setBattlefields(battlefields.filter(battlefield => battlefield.set != setName))
+    setHeroes(heroes.filter(hero => hero.set != setName))
+    setVillains(villains.filter(villain => villain.set != setName))
+    setMinions(minions.filter(minion => minion.set != setName))
   }
 
   return (
@@ -39,9 +53,7 @@ export function Sets() {
       </div>
       {data &&
         data.map((set) => (
-          <button id={set.name} className="setButton" key={set.name} onClick={() => {handleSelect(set.name)}}>
-            {set.name}
-          </button>
+          <ButtonSet key={set.name} {...{handleSelect, handleRemove, setName: set.name}}/>
         ))}
 
       {/* temp */}
@@ -51,6 +63,8 @@ export function Sets() {
       {heroes && heroes.map((hero) => hero.name)}
       <h3>villains</h3>
       {villains && villains.map((villain) => villain.name)}
+      <h3>minions</h3>
+      {minions && minions.map((minion) => minion.name)}
       
     </main>
   )

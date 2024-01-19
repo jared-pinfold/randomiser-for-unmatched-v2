@@ -9,3 +9,10 @@ body {
   width: 300px;
   height: 40px;
 }
+
+
+.setButtonSelected {
+  width: 300px;
+  height: 40px;
+  color: blue;
+}

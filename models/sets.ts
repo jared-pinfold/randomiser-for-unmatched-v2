@@ -1,11 +1,11 @@
 export interface Set {
   name: string
-  maps: Map[]
-  characters: Character[]
+  battlefields: Battlefield[]
+  heroes: Character[]
   villains: Character[]
 }
 
-export interface Map {
+export interface Battlefield {
   name: string
   players: number
   set: string
@@ -14,4 +14,10 @@ export interface Map {
 export interface Character {
   name: string
   set: string
+}
+
+export interface Collection {
+  heroes: Character[]
+  villains: Character[]
+  battlefields: Battlefield[]
 }

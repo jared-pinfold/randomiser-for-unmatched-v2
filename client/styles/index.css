@@ -4,3 +4,8 @@ html,
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+.setButton {
+  width: 300px;
+  height: 40px;
+}

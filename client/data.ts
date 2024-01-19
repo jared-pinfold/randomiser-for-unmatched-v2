@@ -3,11 +3,11 @@ import { Set } from '../models/sets'
 export default [
   {
     name: 'Battle of Legends Volume 1',
-    maps: [
+    battlefields: [
       { name: 'Marmoreal', players: 4, set: 'Battle of Legends Volume 1' },
       { name: 'Sarpedon', players: 4, set: 'Battle of Legends Volume 1' },
     ],
-    characters: [
+    heroes: [
       { name: 'Medusa', set: 'Battle of Legends Volume 1' },
       { name: 'King Arthur', set: 'Battle of Legends Volume 1' },
       { name: 'Alice', set: 'Battle of Legends Volume 1' },
@@ -17,17 +17,17 @@ export default [
   },
   {
     name: 'Bruce Lee',
-    maps: [],
-    characters: [{ name: 'Bruce Lee', set: 'Bruce Lee' }],
+    battlefields: [],
+    heroes: [{ name: 'Bruce Lee', set: 'Bruce Lee' }],
     villains: []
   },
   {
     name: 'Robin Hood vs. Bigfoot',
-    maps: [
+    battlefields: [
       { name: 'Sherwood Forest', players: 2, set: 'Robin Hood vs. Bigfoot' },
       { name: 'Yukon', players: 2, set: 'Robin Hood vs. Bigfoot' },
     ],
-    characters: [
+    heroes: [
       { name: 'Robin Hood', set: 'Robin Hood vs. Bigfoot' },
       { name: 'Bigfoot', set: 'Robin Hood vs. Bigfoot' },
     ],
@@ -35,8 +35,8 @@ export default [
   },
   {
     name: 'InGen vs. Raptors',
-    maps: [{ name: 'Raptor Paddock', players: 2, set: 'InGen vs. Raptors' }],
-    characters: [
+    battlefields: [{ name: 'Raptor Paddock', players: 2, set: 'InGen vs. Raptors' }],
+    heroes: [
       { name: 'Robert Muldoon', set: 'InGen vs. Raptors' },
       { name: 'Raptors', set: 'InGen vs. Raptors' },
     ],
@@ -44,11 +44,11 @@ export default [
   },
   {
     name: 'Cobble & Fog',
-    maps: [
+    battlefields: [
       { name: 'SoHo', players: 4, set: 'Cobble & Fog' },
       { name: 'Baskerville Manor', players: 4, set: 'Cobble & Fog' },
     ],
-    characters: [
+    heroes: [
       { name: 'Sherlock Holmes', set: 'Cobble & Fog' },
       { name: 'Dracula', set: 'Cobble & Fog' },
       { name: 'Jeckyll & Hyde', set: 'Cobble & Fog' },
@@ -58,11 +58,11 @@ export default [
   },
   {
     name: 'Buffy the Vampire Slayer',
-    maps: [
+    battlefields: [
       { name: 'Sunnydale High', players: 4, set: 'Buffy the Vampire Slayer' },
       { name: 'The Bronze', players: 4, set: 'Buffy the Vampire Slayer' },
     ],
-    characters: [
+    heroes: [
       { name: 'Buffy Summers', set: 'Buffy the Vampire Slayer' },
       { name: 'Angel', set: 'Buffy the Vampire Slayer' },
       { name: 'Spike', set: 'Buffy the Vampire Slayer' },
@@ -72,10 +72,10 @@ export default [
   },
   {
     name: 'Little Red riding Hood vs. Beowulf',
-    maps: [
+    battlefields: [
       { name: 'Heorot', players: 4, set: 'Little Red riding Hood vs. Beowulf' },
     ],
-    characters: [
+    heroes: [
       {
         name: 'Little Red Riding Hood',
         set: 'Little Red riding Hood vs. Beowulf',
@@ -86,20 +86,20 @@ export default [
   },
   {
     name: 'Deadpool',
-    maps: [],
-    characters: [{ name: 'Deadpool', set: 'Deadpool' }],
+    battlefields: [],
+    heroes: [{ name: 'Deadpool', set: 'Deadpool' }],
     villains: []
   },
   {
     name: 'Battle of Legends Volume 2',
-    maps: [
+    battlefields: [
       {
         name: 'Hanging Gardens',
         players: 4,
         set: 'Battle of Legends Volume 2',
       },
     ],
-    characters: [
+    heroes: [
       { name: 'Achilles', set: 'Battle of Legends Volume 2' },
       { name: 'Bloody Mary', set: 'Battle of Legends Volume 2' },
       { name: 'Sun Wukong', set: 'Battle of Legends Volume 2' },
@@ -109,8 +109,8 @@ export default [
   },
   {
     name: 'Redemption Row',
-    maps: [{ name: 'The Raft', players: 4, set: 'Redemption Row' }],
-    characters: [
+    battlefields: [{ name: 'The Raft', players: 4, set: 'Redemption Row' }],
+    heroes: [
       { name: 'Luke Cage', set: 'Redemption Row' },
       { name: 'Ghost Rider', set: 'Redemption Row' },
       { name: 'Moon Knight', set: 'Redemption Row' },
@@ -119,8 +119,8 @@ export default [
   },
   {
     name: "Hell's Kitchen",
-    maps: [{ name: "Hell's Kitchen", players: 4, set: "Hell's Kitchen" }],
-    characters: [
+    battlefields: [{ name: "Hell's Kitchen", players: 4, set: "Hell's Kitchen" }],
+    heroes: [
       { name: 'Daredevil', set: "Hell's Kitchen" },
       { name: 'Bullseye', set: "Hell's Kitchen" },
       { name: 'Elektra', set: "Hell's Kitchen" },
@@ -129,8 +129,8 @@ export default [
   },
   {
     name: 'Sattler vs. T-Rex',
-    maps: [{ name: 'T-Rex Paddock', players: 2, set: 'Sattler vs. T-Rex' }],
-    characters: [
+    battlefields: [{ name: 'T-Rex Paddock', players: 2, set: 'Sattler vs. T-Rex' }],
+    heroes: [
       { name: 'Dr. Ellie Sattler', set: 'Sattler vs. T-Rex' },
       { name: 'T-Rex', set: 'Sattler vs. T-Rex' },
     ],
@@ -138,10 +138,10 @@ export default [
   },
   {
     name: 'Houdini vs. The Genie',
-    maps: [
+    battlefields: [
       { name: "King Solomon's Mine", players: 2, set: 'Houdini vs. The Genie' },
     ],
-    characters: [
+    heroes: [
       { name: 'Harry Houdini', set: 'Houdini vs. The Genie' },
       { name: 'The Genie', set: 'Houdini vs. The Genie' },
     ],
@@ -149,8 +149,8 @@ export default [
   },
   {
     name: 'Teen Spirit',
-    maps: [{ name: 'Navy Pier', players: 4, set: 'Teen Spirit' }],
-    characters: [
+    battlefields: [{ name: 'Navy Pier', players: 4, set: 'Teen Spirit' }],
+    heroes: [
       { name: 'Ms. Marvel', set: 'Teen Spirit' },
       { name: 'Squirrel Girl', set: 'Teen Spirit' },
       { name: 'Cloak and Dagger', set: 'Teen Spirit' },
@@ -159,8 +159,8 @@ export default [
   },
   {
     name: 'For King and Country',
-    maps: [{ name: 'Helicarrier', players: 4, set: 'For King and Country' }],
-    characters: [
+    battlefields: [{ name: 'Helicarrier', players: 4, set: 'For King and Country' }],
+    heroes: [
       { name: 'Winter Soldier', set: 'For King and Country' },
       { name: 'Black Widow', set: 'For King and Country' },
       { name: 'Black Panther', set: 'For King and Country' },
@@ -169,8 +169,8 @@ export default [
   },
   {
     name: 'Brains and Brawn',
-    maps: [{ name: 'Sanctum Sanctorum', players: 4, set: 'Brains and Brawn' }],
-    characters: [
+    battlefields: [{ name: 'Sanctum Sanctorum', players: 4, set: 'Brains and Brawn' }],
+    heroes: [
       { name: 'She-Hulk', set: 'Brains and Brawn' },
       { name: 'Spider-Man', set: 'Brains and Brawn' },
       { name: 'Doctor Strange', set: 'Brains and Brawn' },
@@ -179,11 +179,11 @@ export default [
   },
   {
     name: 'Tales to Amaze',
-    maps: [
+    battlefields: [
       { name: 'McMinnville', players: 4, set: 'Tales to Amaze' },
       { name: 'Point Pleasant', players: 4, set: 'Tales to Amaze' },
     ],
-    characters: [
+    heroes: [
       { name: 'Nikola Tesla', set: 'Tales to Amaze' },
       { name: 'Dr. Jill Trent', set: 'Tales to Amaze' },
       { name: 'Golden Bat', set: 'Tales to Amaze' },
@@ -196,8 +196,8 @@ export default [
   },
   {
     name: "Sun's Origin",
-    maps: [{ name: 'Azuchi Castle', players: 2, set: "Sun's Origin" }],
-    characters: [
+    battlefields: [{ name: 'Azuchi Castle', players: 2, set: "Sun's Origin" }],
+    heroes: [
       { name: 'Oda Nobunaga', set: "Sun's Origin" },
       { name: 'Tomoe Gozen', set: "Sun's Origin" },
     ],

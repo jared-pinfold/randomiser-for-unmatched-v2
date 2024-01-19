@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Character, Battlefield,} from '../../models/sets.ts'
 import data from '../data.ts'
+import { ButtonAll } from './ButtonAll.tsx'
 
 export function Sets() {
   const [battlefields, setBattlefields] = useState([] as Battlefield[])
@@ -13,6 +14,12 @@ export function Sets() {
     )
     setHeroes(data.reduce((a, c) => [...a, ...c.heroes], [] as Character[]))
     setVillains(data.reduce((a, c) => [...a, ...c.villains], [] as Character[]))
+  }
+
+  function handleRemoveAll () {
+    setBattlefields([])
+    setHeroes([])
+    setVillains([])
   }
 
   function handleSelect(setName: string) {
@@ -28,7 +35,7 @@ export function Sets() {
     <main>
       <div style={{ display: 'flex' }}>
         <h2>Select the sets you would like to randomise from</h2>
-        <button onClick={handleSelectAll}>Select all</button>
+        <ButtonAll {...{handleSelectAll, handleRemoveAll}}/>
       </div>
       {data &&
         data.map((set) => (
@@ -44,6 +51,7 @@ export function Sets() {
       {heroes && heroes.map((hero) => hero.name)}
       <h3>villains</h3>
       {villains && villains.map((villain) => villain.name)}
+      
     </main>
   )
 }

@@ -3,6 +3,7 @@ import { Character, Battlefield } from '../../models/sets.ts'
 import { data } from '../data.ts'
 import { ButtonAll } from './ButtonAll.tsx'
 import { ButtonSet } from './ButtonSet.tsx'
+import { shuffleArray } from '../utils.ts'
 
 export function Sets() {
   const [battlefields, setBattlefields] = useState([] as Battlefield[])
@@ -11,9 +12,6 @@ export function Sets() {
   const [villains, setVillains] = useState([] as Character[])
   const [minions, setMinions] = useState([] as Character[])
   const [randomBattlefield, setRandomBattlefield] = useState(
-    null as Battlefield | null,
-  )
-  const [randomCoopBattlefield, setRandomCoopBattlefield] = useState(
     null as Battlefield | null,
   )
   const [randomHeroes, setRandomHeroes] = useState(null as Character[] | null)
@@ -46,7 +44,7 @@ export function Sets() {
   function handleSelect(setName: string) {
     const selectedBattlefields = data.find((set) => set.name === setName)
       ?.battlefields as Battlefield[]
-      const selectedCoopBattlefields = data.find((set) => set.name === setName)
+    const selectedCoopBattlefields = data.find((set) => set.name === setName)
       ?.coopBattlefields as Battlefield[]
     const selectedHeroes = data.find((set) => set.name === setName)
       ?.heroes as Character[]
@@ -74,6 +72,24 @@ export function Sets() {
     setMinions(minions.filter((minion) => minion.set != setName))
   }
 
+  function randomise(coop: boolean, players: 1 | 2 | 3 | 4) {
+    const shuffledHeroes = shuffleArray(heroes)
+    const shuffledVillains = shuffleArray(villains)
+    const shuffledMinions = shuffleArray(minions)
+    const shuffledBattlefields = shuffleArray(battlefields)
+    const shuffledCoopBattlefields = shuffleArray(coopBattlefields)
+
+    if (coop) {
+      setRandomBattlefield(shuffledCoopBattlefields.at(0) as Battlefield)
+      setRandomHeroes(shuffledHeroes.slice(0, players) as Character[])
+      setRandomVillain(shuffledVillains.at(0) as Character)
+      setRandomMinions(shuffledMinions.slice(0, players) as Character[])
+    } else {
+      setRandomBattlefield(shuffledBattlefields.at(0) as Battlefield)
+      setRandomHeroes(shuffledHeroes.slice(0, players) as Character[])
+    }
+  }
+
   return (
     <main>
       <div style={{ display: 'flex' }}>
@@ -88,41 +104,49 @@ export function Sets() {
           />
         ))}
 
-      {/* temp */}
-      <h3>Max: {maxPlayers}</h3>
-      <h3>battlefields</h3>
-      {battlefields && battlefields.map((battlefield) => battlefield.name)}
-      <h3>coop battlefields</h3>
-      {coopBattlefields && coopBattlefields.map((battlefield) => battlefield.name)}
-      <h3>characters</h3>
-      {heroes && heroes.map((hero) => hero.name)}
-      <h3>villains</h3>
-      {villains && villains.map((villain) => villain.name)}
-      <h3>minions</h3>
-      {minions && minions.map((minion) => minion.name)}
-
       <h3>Competitive</h3>
-      <button disabled={heroes.length >= 2 && maxPlayers >= 2 ? false : true}>
+      <button
+        disabled={heroes.length >= 2 && maxPlayers >= 2 ? false : true}
+        onClick={() => randomise(false, 2)}
+      >
         2 Player
       </button>
-      <button disabled={heroes.length >= 3 && maxPlayers >= 4 ? false : true}>
+      <button
+        disabled={heroes.length >= 3 && maxPlayers >= 4 ? false : true}
+        onClick={() => randomise(false, 3)}
+      >
         3 Player
       </button>
-      <button disabled={heroes.length >= 4 && maxPlayers >= 4 ? false : true}>
+      <button
+        disabled={heroes.length >= 4 && maxPlayers >= 4 ? false : true}
+        onClick={() => randomise(false, 4)}
+      >
         4 Player
       </button>
 
       <h3>Co-Op / Solo</h3>
-      <button disabled={heroes.length >= 1 && coopBattlefields.length ? false : true}>
+      <button
+        disabled={heroes.length >= 1 && coopBattlefields.length ? false : true}
+        onClick={() => randomise(true, 1)}
+      >
         1 Player
       </button>
-      <button disabled={heroes.length >= 2 && coopBattlefields.length ? false : true}>
+      <button
+        disabled={heroes.length >= 2 && coopBattlefields.length ? false : true}
+        onClick={() => randomise(true, 2)}
+      >
         2 Player
       </button>
-      <button disabled={heroes.length >= 3 && coopBattlefields.length ? false : true}>
+      <button
+        disabled={heroes.length >= 3 && coopBattlefields.length ? false : true}
+        onClick={() => randomise(true, 3)}
+      >
         3 Player
       </button>
-      <button disabled={heroes.length >= 4 && coopBattlefields.length ? false : true}>
+      <button
+        disabled={heroes.length >= 4 && coopBattlefields.length ? false : true}
+        onClick={() => randomise(true, 4)}
+      >
         4 Player
       </button>
 
@@ -136,7 +160,7 @@ export function Sets() {
       {randomVillain && <p>Villain: {randomVillain.name}</p>}
       {randomMinions && (
         <>
-          <p>Minions:</p>{' '}
+          <p>Minions:</p>
           {randomMinions.map((minion) => (
             <p key={minion.name}>{minion.name}</p>
           ))}

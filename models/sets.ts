@@ -18,8 +18,9 @@ export interface Character {
   set: string
 }
 
-export interface Collection {
+export interface Randomised {
   heroes: Character[]
-  villains: Character[]
-  battlefields: Battlefield[]
+  villain: Character | null
+  battlefield: Battlefield
+  minions: Character[] | null
 }

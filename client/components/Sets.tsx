@@ -1,22 +1,20 @@
 import { useState } from 'react'
-import { Character, Battlefield } from '../../models/sets.ts'
+import { Character, Battlefield, Randomised } from '../../models/sets.ts'
 import { data } from '../data.ts'
 import { ButtonAll } from './ButtonAll.tsx'
 import { ButtonSet } from './ButtonSet.tsx'
 import { shuffleArray } from '../utils.ts'
 
 export function Sets() {
+  // State for building pool of available components based on selevted Unmatched sets
   const [battlefields, setBattlefields] = useState([] as Battlefield[])
   const [coopBattlefields, setCoopBattlefields] = useState([] as Battlefield[])
   const [heroes, setHeroes] = useState([] as Character[])
   const [villains, setVillains] = useState([] as Character[])
   const [minions, setMinions] = useState([] as Character[])
-  const [randomBattlefield, setRandomBattlefield] = useState(
-    null as Battlefield | null,
-  )
-  const [randomHeroes, setRandomHeroes] = useState(null as Character[] | null)
-  const [randomVillain, setRandomVillain] = useState(null as Character | null)
-  const [randomMinions, setRandomMinions] = useState(null as Character[] | null)
+  // State to store randomised results once a game type has been submitted
+  const [randomised, setRandomised] = useState({} as Randomised)
+  // Tracks the number of players the current set selections can accomodate
   const maxPlayers = Math.max(
     ...battlefields.map((battlefield) => battlefield.players),
   )
@@ -80,13 +78,19 @@ export function Sets() {
     const shuffledCoopBattlefields = shuffleArray(coopBattlefields)
 
     if (coop) {
-      setRandomBattlefield(shuffledCoopBattlefields.at(0) as Battlefield)
-      setRandomHeroes(shuffledHeroes.slice(0, players) as Character[])
-      setRandomVillain(shuffledVillains.at(0) as Character)
-      setRandomMinions(shuffledMinions.slice(0, players) as Character[])
+      setRandomised({
+        battlefield: shuffledCoopBattlefields.at(0) as Battlefield,
+        heroes: shuffledHeroes.slice(0, players) as Character[],
+        villain: shuffledVillains.at(0) as Character,
+        minions: shuffledMinions.slice(0, players) as Character[]
+      })
     } else {
-      setRandomBattlefield(shuffledBattlefields.at(0) as Battlefield)
-      setRandomHeroes(shuffledHeroes.slice(0, players) as Character[])
+      setRandomised({
+        battlefield: shuffledBattlefields.at(0) as Battlefield,
+        heroes: shuffledHeroes.slice(0, players) as Character[],
+        villain: null,
+        minions: null
+      })
     }
   }
 
@@ -103,6 +107,8 @@ export function Sets() {
             {...{ handleSelect, handleRemove, setName: set.name }}
           />
         ))}
+
+{/* Game type */}
 
       <h3>Competitive</h3>
       <button
@@ -150,18 +156,19 @@ export function Sets() {
         4 Player
       </button>
 
-      {randomHeroes &&
-        randomHeroes.map((hero: Character, i: number) => (
+{/* Results */}
+      {randomised.heroes &&
+        randomised.heroes.map((hero: Character, i: number) => (
           <p key={hero.name}>
             Player{i + 1}: {hero.name}
           </p>
         ))}
-      {randomBattlefield && <p>Battlefield: {randomBattlefield.name}</p>}
-      {randomVillain && <p>Villain: {randomVillain.name}</p>}
-      {randomMinions && (
+      {randomised.battlefield && <p>Battlefield: {randomised.battlefield.name}</p>}
+      {randomised.villain && <p>Villain: {randomised.villain.name}</p>}
+      {randomised.minions && (
         <>
           <p>Minions:</p>
-          {randomMinions.map((minion) => (
+          {randomised.minions.map((minion) => (
             <p key={minion.name}>{minion.name}</p>
           ))}
         </>

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Character, Battlefield, Randomised } from '../../models/sets.ts'
-import { data } from '../data.ts'
+import { Character, Battlefield, Randomised, VillainBattlefields} from '../../models/sets.ts'
+import { data, villainBattlefields } from '../data.ts'
 import { ButtonAll } from './ButtonAll.tsx'
 import { ButtonSet } from './ButtonSet.tsx'
 import { shuffleArray } from '../utils.ts'
@@ -71,23 +71,25 @@ export function Sets() {
   }
 
   function randomise(coop: boolean, players: 1 | 2 | 3 | 4) {
-    const shuffledHeroes = shuffleArray(heroes)
-    const shuffledVillains = shuffleArray(villains)
-    const shuffledMinions = shuffleArray(minions)
-    const shuffledBattlefields = shuffleArray(battlefields)
-    const shuffledCoopBattlefields = shuffleArray(coopBattlefields)
+    const shuffledHeroes = shuffleArray(heroes).slice(0, players) as Character[]
+    const shuffledVillain = shuffleArray(villains).at(0) as Character
+    const shuffledMinions = shuffleArray(minions).slice(0, players) as Character[]
+    const shuffledBattlefield = shuffleArray(battlefields).at(0) as Battlefield
+    type Attribute = keyof VillainBattlefields
+    const attribute = shuffledVillain.name as Attribute
+    const villainBattlefield = villainBattlefields[attribute]
 
     if (coop) {
       setRandomised({
-        battlefield: shuffledCoopBattlefields.at(0) as Battlefield,
-        heroes: shuffledHeroes.slice(0, players) as Character[],
-        villain: shuffledVillains.at(0) as Character,
-        minions: shuffledMinions.slice(0, players) as Character[]
+        battlefield: villainBattlefield,
+        heroes: shuffledHeroes,
+        villain: shuffledVillain,
+        minions: shuffledMinions
       })
     } else {
       setRandomised({
-        battlefield: shuffledBattlefields.at(0) as Battlefield,
-        heroes: shuffledHeroes.slice(0, players) as Character[],
+        battlefield: shuffledBattlefield,
+        heroes: shuffledHeroes,
         villain: null,
         minions: null
       })

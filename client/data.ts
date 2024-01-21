@@ -15,7 +15,7 @@ export const data = [
       { name: 'Sinbad', set: 'Battle of Legends Volume 1' },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: 'Bruce Lee',
@@ -23,7 +23,7 @@ export const data = [
     coopBattlefields: [],
     heroes: [{ name: 'Bruce Lee', set: 'Bruce Lee' }],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: 'Robin Hood vs. Bigfoot',
@@ -37,18 +37,20 @@ export const data = [
       { name: 'Bigfoot', set: 'Robin Hood vs. Bigfoot' },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: 'InGen vs. Raptors',
-    battlefields: [{ name: 'Raptor Paddock', players: 2, set: 'InGen vs. Raptors' }],
+    battlefields: [
+      { name: 'Raptor Paddock', players: 2, set: 'InGen vs. Raptors' },
+    ],
     coopBattlefields: [],
     heroes: [
       { name: 'Robert Muldoon', set: 'InGen vs. Raptors' },
       { name: 'Raptors', set: 'InGen vs. Raptors' },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: 'Cobble & Fog',
@@ -64,7 +66,7 @@ export const data = [
       { name: 'Invisible Man', set: 'Cobble & Fog' },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: 'Buffy the Vampire Slayer',
@@ -80,7 +82,7 @@ export const data = [
       { name: 'Willow', set: 'Buffy the Vampire Slayer' },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: 'Little Red riding Hood vs. Beowulf',
@@ -96,7 +98,7 @@ export const data = [
       { name: 'Beowulf', set: 'Little Red riding Hood vs. Beowulf' },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: 'Deadpool',
@@ -104,7 +106,7 @@ export const data = [
     coopBattlefields: [],
     heroes: [{ name: 'Deadpool', set: 'Deadpool' }],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: 'Battle of Legends Volume 2',
@@ -123,7 +125,7 @@ export const data = [
       { name: 'Yennenga', set: 'Battle of Legends Volume 2' },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: 'Redemption Row',
@@ -135,11 +137,13 @@ export const data = [
       { name: 'Moon Knight', set: 'Redemption Row' },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: "Hell's Kitchen",
-    battlefields: [{ name: "Hell's Kitchen", players: 4, set: "Hell's Kitchen" }],
+    battlefields: [
+      { name: "Hell's Kitchen", players: 4, set: "Hell's Kitchen" },
+    ],
     coopBattlefields: [],
     heroes: [
       { name: 'Daredevil', set: "Hell's Kitchen" },
@@ -147,18 +151,20 @@ export const data = [
       { name: 'Elektra', set: "Hell's Kitchen" },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: 'Sattler vs. T-Rex',
-    battlefields: [{ name: 'T-Rex Paddock', players: 2, set: 'Sattler vs. T-Rex' }],
+    battlefields: [
+      { name: 'T-Rex Paddock', players: 2, set: 'Sattler vs. T-Rex' },
+    ],
     coopBattlefields: [],
     heroes: [
       { name: 'Dr. Ellie Sattler', set: 'Sattler vs. T-Rex' },
       { name: 'T-Rex', set: 'Sattler vs. T-Rex' },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: 'Houdini vs. The Genie',
@@ -171,9 +177,9 @@ export const data = [
       { name: 'The Genie', set: 'Houdini vs. The Genie' },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
-  
+
   {
     name: 'Teen Spirit',
     battlefields: [{ name: 'Navy Pier', players: 4, set: 'Teen Spirit' }],
@@ -184,11 +190,13 @@ export const data = [
       { name: 'Cloak and Dagger', set: 'Teen Spirit' },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: 'For King and Country',
-    battlefields: [{ name: 'Helicarrier', players: 4, set: 'For King and Country' }],
+    battlefields: [
+      { name: 'Helicarrier', players: 4, set: 'For King and Country' },
+    ],
     coopBattlefields: [],
     heroes: [
       { name: 'Winter Soldier', set: 'For King and Country' },
@@ -196,11 +204,13 @@ export const data = [
       { name: 'Black Panther', set: 'For King and Country' },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: 'Brains and Brawn',
-    battlefields: [{ name: 'Sanctum Sanctorum', players: 4, set: 'Brains and Brawn' }],
+    battlefields: [
+      { name: 'Sanctum Sanctorum', players: 4, set: 'Brains and Brawn' },
+    ],
     coopBattlefields: [],
     heroes: [
       { name: 'She-Hulk', set: 'Brains and Brawn' },
@@ -208,7 +218,7 @@ export const data = [
       { name: 'Doctor Strange', set: 'Brains and Brawn' },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
   {
     name: 'Tales to Amaze',
@@ -237,7 +247,7 @@ export const data = [
       { name: 'The Blob', set: 'Tales to Amaze' },
       { name: 'Tarantula', set: 'Tales to Amaze' },
       { name: 'Jersey Devil', set: 'Tales to Amaze' },
-    ]
+    ],
   },
   {
     name: "Sun's Origin",
@@ -248,7 +258,11 @@ export const data = [
       { name: 'Tomoe Gozen', set: "Sun's Origin" },
     ],
     villains: [],
-    minions: []
+    minions: [],
   },
 ] as Set[]
 
+export const villainBattlefields = {
+  'Mothman': { name: 'Point Pleasant', players: 4, set: 'Tales to Amaze' },
+  'Alien Invaders': { name: 'McMinnville', players: 4, set: 'Tales to Amaze' },
+}

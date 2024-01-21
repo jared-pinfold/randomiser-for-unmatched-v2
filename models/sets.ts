@@ -24,3 +24,8 @@ export interface Randomised {
   battlefield: Battlefield
   minions: Character[] | null
 }
+
+export type VillainBattlefields = {
+  'Moth Man': string
+  'Alien Invaders': string
+}

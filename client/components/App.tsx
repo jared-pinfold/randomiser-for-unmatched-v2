@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Header } from './Header.tsx'
 import { Result } from './Result.tsx'
 import { Sets } from './Sets.tsx'
@@ -5,13 +6,15 @@ import { Sets } from './Sets.tsx'
 
 function App() {
 
+  const [page, setPage] = useState('sets')
 
   return (
     <>
       <div className="app">
         <Header />
-        <Sets/>
-        <Result />
+        {page === 'sets' && <Sets/>}
+        {/* {page === 'gameType' && <GameType/>} */}
+        {/* {page === 'result' && <Result />} */}
       </div>
     </>
   )

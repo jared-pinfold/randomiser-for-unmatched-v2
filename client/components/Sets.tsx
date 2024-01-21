@@ -76,10 +76,11 @@ export function Sets() {
     const shuffledMinions = shuffleArray(minions).slice(0, players) as Character[]
     const shuffledBattlefield = shuffleArray(battlefields).at(0) as Battlefield
     type Attribute = keyof VillainBattlefields
-    const attribute = shuffledVillain.name as Attribute
+    const attribute = shuffledVillain?.name as Attribute
     const villainBattlefield = villainBattlefields[attribute]
 
     if (coop) {
+      console.log(randomised)
       setRandomised({
         battlefield: villainBattlefield,
         heroes: shuffledHeroes,
@@ -87,6 +88,7 @@ export function Sets() {
         minions: shuffledMinions
       })
     } else {
+      console.log(randomised)
       setRandomised({
         battlefield: shuffledBattlefield,
         heroes: shuffledHeroes,

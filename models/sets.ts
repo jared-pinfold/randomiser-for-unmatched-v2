@@ -26,6 +26,6 @@ export interface Randomised {
 }
 
 export type VillainBattlefields = {
-  'Moth Man': string
+  'Mothman': string
   'Alien Invaders': string
 }

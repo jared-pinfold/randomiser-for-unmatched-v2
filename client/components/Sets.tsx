@@ -19,26 +19,6 @@ export function Sets() {
     ...battlefields.map((battlefield) => battlefield.players),
   )
 
-  function handleSelectAll() {
-    setBattlefields(
-      data.reduce((a, c) => [...a, ...c.battlefields], [] as Battlefield[]),
-    )
-    setCoopBattlefields(
-      data.reduce((a, c) => [...a, ...c.coopBattlefields], [] as Battlefield[]),
-    )
-    setHeroes(data.reduce((a, c) => [...a, ...c.heroes], [] as Character[]))
-    setVillains(data.reduce((a, c) => [...a, ...c.villains], [] as Character[]))
-    setMinions(data.reduce((a, c) => [...a, ...c.minions], [] as Character[]))
-  }
-
-  function handleRemoveAll() {
-    setBattlefields([])
-    setCoopBattlefields([])
-    setHeroes([])
-    setVillains([])
-    setMinions([])
-  }
-
   function handleSelect(setName: string) {
     const selectedBattlefields = data.find((set) => set.name === setName)
       ?.battlefields as Battlefield[]
@@ -102,7 +82,7 @@ export function Sets() {
     <main>
       <div style={{ display: 'flex' }}>
         <h2>Select the sets you would like to randomise from</h2>
-        <ButtonAll {...{ handleSelectAll, handleRemoveAll }} />
+        <ButtonAll {...{ setBattlefields, setCoopBattlefields, setHeroes, setVillains, setMinions }} />
       </div>
       {data &&
         data.map((set) => (

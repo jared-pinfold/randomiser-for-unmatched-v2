@@ -19,37 +19,6 @@ export function Sets() {
     ...battlefields.map((battlefield) => battlefield.players),
   )
 
-  function handleSelect(setName: string) {
-    const selectedBattlefields = data.find((set) => set.name === setName)
-      ?.battlefields as Battlefield[]
-    const selectedCoopBattlefields = data.find((set) => set.name === setName)
-      ?.coopBattlefields as Battlefield[]
-    const selectedHeroes = data.find((set) => set.name === setName)
-      ?.heroes as Character[]
-    const selectedVillains = data.find((set) => set.name === setName)
-      ?.villains as Character[]
-    const selectedMinions = data.find((set) => set.name === setName)
-      ?.minions as Character[]
-
-    setBattlefields([...battlefields, ...selectedBattlefields])
-    setCoopBattlefields([...coopBattlefields, ...selectedCoopBattlefields])
-    setHeroes([...heroes, ...selectedHeroes])
-    setVillains([...villains, ...selectedVillains])
-    setMinions([...minions, ...selectedMinions])
-  }
-
-  function handleRemove(setName: string) {
-    setBattlefields(
-      battlefields.filter((battlefield) => battlefield.set != setName),
-    )
-    setCoopBattlefields(
-      coopBattlefields.filter((battlefield) => battlefield.set != setName),
-    )
-    setHeroes(heroes.filter((hero) => hero.set != setName))
-    setVillains(villains.filter((villain) => villain.set != setName))
-    setMinions(minions.filter((minion) => minion.set != setName))
-  }
-
   function randomise(coop: boolean, players: 1 | 2 | 3 | 4) {
     const shuffledHeroes = shuffleArray(heroes).slice(0, players) as Character[]
     const shuffledVillain = shuffleArray(villains).at(0) as Character
@@ -88,7 +57,7 @@ export function Sets() {
         data.map((set) => (
           <ButtonSet
             key={set.name}
-            {...{ handleSelect, handleRemove, setName: set.name }}
+            {...{ setBattlefields, setCoopBattlefields, setHeroes, setVillains, setMinions, setName: set.name, battlefields, coopBattlefields, heroes, villains, minions }}
           />
         ))}
 

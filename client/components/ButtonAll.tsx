@@ -8,6 +8,7 @@ interface ButtonAllProps {
   setHeroes: (arr: Character[]) => void
   setVillains: (arr: Character[]) => void
   setMinions: (arr: Character[]) => void
+  setPage: (str: string) => void
 }
 
 export function ButtonAll(props: ButtonAllProps) {
@@ -18,12 +19,14 @@ export function ButtonAll(props: ButtonAllProps) {
     setHeroes,
     setVillains,
     setMinions,
+    setPage
   } = props
 
   function handleClick() {
     if (clicked) handleRemoveAll()
     else handleSelectAll()
     setClicked(!clicked)
+    setPage('gameType')
   }
 
   function handleSelectAll() {
